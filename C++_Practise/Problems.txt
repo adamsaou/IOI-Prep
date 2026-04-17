@@ -1,0 +1,86 @@
+🟢 1. Sum of Array
+🧩 Task
+
+Input n, then n numbers → print their sum
+
+🎯 You learn:
+vector
+loops
+input/output
+=========DONE================
+
+🟢 2. Count Even Numbers
+🧩 Task
+
+Count how many numbers are even
+
+🎯 You learn:
+conditions (if)
+% operator
+=========DONE================
+
+🟢 3. Maximum Element
+🧩 Task
+
+Find the largest number in the array
+
+🎯 You learn:
+tracking values
+max()
+=========DONE================
+
+🟡 4. Contains Duplicate
+🧩 Task
+
+Return YES if any number appears twice
+
+🎯 You learn:
+set
+checking existence
+🟡 5. Count Distinct Numbers
+🧩 Task
+
+Count how many unique values exist
+
+🎯 You learn:
+set
+.size()
+🟠 6. Frequency Count
+🧩 Task
+
+Count how many times each number appears
+
+🎯 You learn:
+map
+counting pattern
+🔵 7. Sort Array
+🧩 Task
+
+Sort numbers in ascending order
+
+🎯 You learn:
+sort()
+🟣 8. Find Median
+🧩 Task
+
+Find middle element after sorting
+
+🎯 You learn:
+indexing
+sorting logic
+🔴 9. Two Sum (first “real” problem)
+🧩 Task
+
+Find two numbers that sum to target
+
+🎯 You learn:
+problem solving
+map usage
+⚫ 10. Intersection of Arrays
+🧩 Task
+
+Find common elements between two arrays
+
+🎯 You learn:
+set
+logic

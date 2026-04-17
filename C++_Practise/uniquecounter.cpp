@@ -19,3 +19,10 @@ int main() {
     
     return 0;
 }
+
+/*
+--> Seen pattern: In a lot of problems, i need to know if i have encountered an element before, instead of nested loops, i use 'insert' every element onto a set, it filters out dups
+-->(IMPORTANT) Automatic sorting: the set keeps elements sorted, if i iterate in a set from 'begin()' to 'end()'
+
+--> Time Complexity: O(N log(N)): Insertion takes O(N log(N)) time
+*/
