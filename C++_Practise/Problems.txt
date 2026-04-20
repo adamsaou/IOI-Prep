@@ -37,6 +37,8 @@ Return YES if any number appears twice
 🎯 You learn:
 set
 checking existence
+
+
 🟡 5. Count Distinct Numbers
 🧩 Task
 
@@ -45,6 +47,7 @@ Count how many unique values exist
 🎯 You learn:
 set
 .size()
+=========DONE================
 🟠 6. Frequency Count
 🧩 Task
 
