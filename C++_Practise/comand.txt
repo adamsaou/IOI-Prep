@@ -1,0 +1,8 @@
+Command to compile: g++ -o file.exe file.cpp; 
+Command to run:    ./file.exe
+
+
+Git comands:
+git add .
+git commit -m "Add new practice problems and solutions"
+git push origin main
