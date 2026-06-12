@@ -1,13 +1,14 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
 int main(){
-
     ios::sync_with_stdio(false); cin.tie(NULL);
 
     int n,l,a; cin>>n>>l>>a;
     
     
+
     return 0;
 }
+
+    
