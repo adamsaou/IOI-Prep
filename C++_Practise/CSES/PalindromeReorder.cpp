@@ -28,7 +28,6 @@ int main(){
         }
         //cout << p.first << " : " << p.second << "\n";
     }
-    
 
     
     return 0;
