@@ -39,21 +39,35 @@ int main(){
             cout << "NO SOLUTION" << "\n";
             return 0;
         }
-        cout << p.first << " : " << p.second << "\n";
+        // cout << p.first << " : " << p.second << "\n";
     }
     //check if it's possible to make a palindroe out of that string
 
 
     sort(s.begin(),s.end());
-    cout << s<< "\n";
+    // cout << s<< "\n";
+    // cout << "YES"<< "\n";
+
     string first;
     string m;
     //making a const alg to make the palindrome    
     //AAAACACBA
     
-    for(int i = 0;i<s.length();i++){
-        first.push_back(freq.first);
+    for(int i = 0;i<s.length(); ){
+        if(i == s.length() - 1 || s[i] != s[i+1]){
+            m = s[i];
+            i++;
+        } else {
+            first.push_back(s[i]);
+            i += 2;
+        }
+
     }
+    string end = first; 
+    reverse(first.begin(), first.end());
+
+
+
 
     //idea: sort from A-Z
     //AAAAAABCC
@@ -62,11 +76,9 @@ int main(){
 
     //AACABACAA
 
-    for(int i = 0;i<(s.length() / 2);i++){
 
-    }
-
-    string last;
+    string last = first + m + end;
+    cout << last << "\n";
 
     
     return 0;
