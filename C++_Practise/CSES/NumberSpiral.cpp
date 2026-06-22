@@ -12,6 +12,9 @@ int main(){
         int n = max(y, x);
 
         n = n*n;
+        if(n % 2 == 0){
+            
+        }
 
     }
     
