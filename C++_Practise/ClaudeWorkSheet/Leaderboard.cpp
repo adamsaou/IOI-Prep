@@ -16,7 +16,13 @@ int main(){
     int n; cin >>n;
     vector<Player> p(n);
 
-    
+    for(auto &x : p){
+        cin >> x.name >> x.score;
+    }
+
+    sort(p.begin(), p.end(), [](const Player &a, const Player &b));
+
+
 
 
     

@@ -10,30 +10,28 @@ int main(){
 
     ll t;cin>>t;
 
-    ll add = 0; 
     while(t--){
-        ll x, y; cin>>y>>x;
+        ll y, x; cin>>y>>x;
 
-        if (x > y){
-            ll ans = (x - 1) * (y - 1);
+        if (y > x){
+            ll ans = (y - 1) * (y - 1);
             ll add = 0;
-            if (y % 2 == 0){
+            if (y % 2 != 0){
                add = x; 
             } else {
                 add = 2 * y - x;
             }
             cout << ans + add << "\n";
+        } else {
+            ll ans = (x - 1) * (x - 1);
+            ll add = 0;
+            if (x % 2 == 0){
+                add = y; 
             } else {
-
-                ll ans = (x - 1) * (y - 1);
-                ll add = 0;
-                if (x % 2 == 0){
-                    add = y; 
-                } else {
-                    add = 2 * x - y;
-                }
-                cout << ans + add << "\n";
+                add = 2 * x - y;
             }
+            cout << ans + add << "\n";
+        }
                 
         // if (x = y){
         //     ans = (x*x) - (y-1);

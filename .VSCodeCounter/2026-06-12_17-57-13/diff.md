@@ -1,8 +1,8 @@
 # Diff Summary
 
-Date : 2026-05-25 00:08:18
+Date : 2026-06-12 17:57:13
 
-Directory c:\\Users\\HP\\
+Directory c:\\Users\\HP\\Developement\\IOI-Practise
 
 Total : 0 files,  0 codes, 0 comments, 0 blanks, all 0 lines
 

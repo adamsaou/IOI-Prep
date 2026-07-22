@@ -1,10 +1,10 @@
 # Details
 
-Date : 2026-05-25 00:07:41
+Date : 2026-06-24 20:57:06
 
 Directory c:\\Users\\HP\\Developement\\IOI-Practise
 
-Total : 73 files,  1243 codes, 135 comments, 508 blanks, all 1886 lines
+Total : 117 files,  2121 codes, 309 comments, 924 blanks, all 3354 lines
 
 [Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
 
@@ -24,11 +24,34 @@ Total : 73 files,  1243 codes, 135 comments, 508 blanks, all 1886 lines
 | [C++\_Practise/CSES/BitStrings.cpp](/C++_Practise/CSES/BitStrings.cpp) | C++ | 22 | 0 | 8 | 30 |
 | [C++\_Practise/CSES/IncreasingArray.cpp](/C++_Practise/CSES/IncreasingArray.cpp) | C++ | 21 | 0 | 9 | 30 |
 | [C++\_Practise/CSES/MissingNum.cpp](/C++_Practise/CSES/MissingNum.cpp) | C++ | 18 | 0 | 5 | 23 |
+| [C++\_Practise/CSES/NumberSpiral.cpp](/C++_Practise/CSES/NumberSpiral.cpp) | C++ | 37 | 5 | 20 | 62 |
+| [C++\_Practise/CSES/PalindromeReorder.cpp](/C++_Practise/CSES/PalindromeReorder.cpp) | C++ | 46 | 15 | 25 | 86 |
 | [C++\_Practise/CSES/Permutations.cpp](/C++_Practise/CSES/Permutations.cpp) | C++ | 8 | 0 | 8 | 16 |
 | [C++\_Practise/CSES/Repetitions.cpp](/C++_Practise/CSES/Repetitions.cpp) | C++ | 18 | 0 | 6 | 24 |
+| [C++\_Practise/CSES/TrailingZeros.cpp](/C++_Practise/CSES/TrailingZeros.cpp) | C++ | 15 | 1 | 8 | 24 |
+| [C++\_Practise/CSES/TwoSets.cpp](/C++_Practise/CSES/TwoSets.cpp) | C++ | 35 | 43 | 20 | 98 |
 | [C++\_Practise/CSES/WeirdAlg.cpp](/C++_Practise/CSES/WeirdAlg.cpp) | C++ | 16 | 0 | 4 | 20 |
 | [C++\_Practise/CircularLocalMinMax.cpp](/C++_Practise/CircularLocalMinMax.cpp) | C++ | 19 | 1 | 2 | 22 |
+| [C++\_Practise/ClaudeWorkSheet/ArraySum.cpp](/C++_Practise/ClaudeWorkSheet/ArraySum.cpp) | C++ | 14 | 0 | 8 | 22 |
+| [C++\_Practise/ClaudeWorkSheet/CountEvens.cpp](/C++_Practise/ClaudeWorkSheet/CountEvens.cpp) | C++ | 14 | 11 | 12 | 37 |
+| [C++\_Practise/ClaudeWorkSheet/DivisibleCount.cpp](/C++_Practise/ClaudeWorkSheet/DivisibleCount.cpp) | C++ | 10 | 4 | 9 | 23 |
+| [C++\_Practise/ClaudeWorkSheet/Ex1.cpp](/C++_Practise/ClaudeWorkSheet/Ex1.cpp) | C++ | 14 | 0 | 8 | 22 |
+| [C++\_Practise/ClaudeWorkSheet/FitMostItems.cpp](/C++_Practise/ClaudeWorkSheet/FitMostItems.cpp) | C++ | 22 | 19 | 16 | 57 |
+| [C++\_Practise/ClaudeWorkSheet/GCDArray.cpp](/C++_Practise/ClaudeWorkSheet/GCDArray.cpp) | C++ | 14 | 2 | 11 | 27 |
+| [C++\_Practise/ClaudeWorkSheet/Leaderboard.cpp](/C++_Practise/ClaudeWorkSheet/Leaderboard.cpp) | C++ | 6 | 0 | 6 | 12 |
+| [C++\_Practise/ClaudeWorkSheet/MaximumPairProduct.cpp](/C++_Practise/ClaudeWorkSheet/MaximumPairProduct.cpp) | C++ | 15 | 10 | 12 | 37 |
+| [C++\_Practise/ClaudeWorkSheet/MinimumCoins.cpp](/C++_Practise/ClaudeWorkSheet/MinimumCoins.cpp) | C++ | 28 | 22 | 17 | 67 |
+| [C++\_Practise/ClaudeWorkSheet/PairSumExists.cpp](/C++_Practise/ClaudeWorkSheet/PairSumExists.cpp) | C++ | 18 | 17 | 12 | 47 |
+| [C++\_Practise/ClaudeWorkSheet/RobotWalk.cpp](/C++_Practise/ClaudeWorkSheet/RobotWalk.cpp) | C++ | 23 | 0 | 10 | 33 |
+| [C++\_Practise/CodeForces/Candies.cpp](/C++_Practise/CodeForces/Candies.cpp) | C++ | 17 | 0 | 7 | 24 |
+| [C++\_Practise/CodeForces/Cashier.cpp](/C++_Practise/CodeForces/Cashier.cpp) | C++ | 7 | 0 | 8 | 15 |
+| [C++\_Practise/CodeForces/ReverseAnArray.cpp](/C++_Practise/CodeForces/ReverseAnArray.cpp) | C++ | 14 | 0 | 5 | 19 |
 | [C++\_Practise/CodeForces/Round1094\_Div1/A.cpp](/C++_Practise/CodeForces/Round1094_Div1/A.cpp) | C++ | 14 | 0 | 6 | 20 |
+| [C++\_Practise/CodeForces/Round1102\_Div2/EuclidSequenceTwoNumbers.cpp](/C++_Practise/CodeForces/Round1102_Div2/EuclidSequenceTwoNumbers.cpp) | C++ | 32 | 0 | 11 | 43 |
+| [C++\_Practise/CodeForces/Round1102\_Div2/PalindromeTwelveAndTwoTermes.cpp](/C++_Practise/CodeForces/Round1102_Div2/PalindromeTwelveAndTwoTermes.cpp) | C++ | 31 | 0 | 14 | 45 |
+| [C++\_Practise/CodeForces/Round1103\_Div3/GamesOnTheTrain.cpp](/C++_Practise/CodeForces/Round1103_Div3/GamesOnTheTrain.cpp) | C++ | 17 | 0 | 7 | 24 |
+| [C++\_Practise/CodeForces/Round1103\_Div3/OmskProgrammers.cpp](/C++_Practise/CodeForces/Round1103_Div3/OmskProgrammers.cpp) | C++ | 32 | 1 | 7 | 40 |
+| [C++\_Practise/CodeForces/Round1103\_Div3/TatarTVShow.cpp](/C++_Practise/CodeForces/Round1103_Div3/TatarTVShow.cpp) | C++ | 29 | 0 | 7 | 36 |
 | [C++\_Practise/CountDups.cpp](/C++_Practise/CountDups.cpp) | C++ | 23 | 0 | 5 | 28 |
 | [C++\_Practise/CountEvenNumbers.cpp](/C++_Practise/CountEvenNumbers.cpp) | C++ | 19 | 1 | 7 | 27 |
 | [C++\_Practise/DistinctNums.cpp](/C++_Practise/DistinctNums.cpp) | C++ | 14 | 0 | 7 | 21 |
@@ -37,11 +60,29 @@ Total : 73 files,  1243 codes, 135 comments, 508 blanks, all 1886 lines
 | [C++\_Practise/JuniorSheet/AntonDanik.cpp](/C++_Practise/JuniorSheet/AntonDanik.cpp) | C++ | 18 | 0 | 6 | 24 |
 | [C++\_Practise/JuniorSheet/BearBigBrother.cpp](/C++_Practise/JuniorSheet/BearBigBrother.cpp) | C++ | 15 | 2 | 7 | 24 |
 | [C++\_Practise/JuniorSheet/BeautifulMatrix.cpp](/C++_Practise/JuniorSheet/BeautifulMatrix.cpp) | C++ | 17 | 0 | 5 | 22 |
+| [C++\_Practise/JuniorSheet/BlackSquare.cpp](/C++_Practise/JuniorSheet/BlackSquare.cpp) | C++ | 16 | 2 | 11 | 29 |
 | [C++\_Practise/JuniorSheet/BoyGirl.cpp](/C++_Practise/JuniorSheet/BoyGirl.cpp) | C++ | 13 | 0 | 6 | 19 |
+| [C++\_Practise/JuniorSheet/BuyAShovel.cpp](/C++_Practise/JuniorSheet/BuyAShovel.cpp) | C++ | 13 | 0 | 7 | 20 |
+| [C++\_Practise/JuniorSheet/ColorfulStones.cpp](/C++_Practise/JuniorSheet/ColorfulStones.cpp) | C++ | 16 | 0 | 7 | 23 |
+| [C++\_Practise/JuniorSheet/CypherShifer.cpp](/C++_Practise/JuniorSheet/CypherShifer.cpp) | C++ | 9 | 0 | 3 | 12 |
+| [C++\_Practise/JuniorSheet/DieRoll.cpp](/C++_Practise/JuniorSheet/DieRoll.cpp) | C++ | 10 | 0 | 8 | 18 |
+| [C++\_Practise/JuniorSheet/FreeIceCream.cpp](/C++_Practise/JuniorSheet/FreeIceCream.cpp) | C++ | 24 | 0 | 4 | 28 |
+| [C++\_Practise/JuniorSheet/Games.cpp](/C++_Practise/JuniorSheet/Games.cpp) | C++ | 22 | 0 | 8 | 30 |
 | [C++\_Practise/JuniorSheet/GravityFlip.cpp](/C++_Practise/JuniorSheet/GravityFlip.cpp) | C++ | 17 | 0 | 9 | 26 |
+| [C++\_Practise/JuniorSheet/HelpfulMaths.cpp](/C++_Practise/JuniorSheet/HelpfulMaths.cpp) | C++ | 22 | 0 | 7 | 29 |
+| [C++\_Practise/JuniorSheet/Horseshoe.cpp](/C++_Practise/JuniorSheet/Horseshoe.cpp) | C++ | 13 | 0 | 6 | 19 |
+| [C++\_Practise/JuniorSheet/Magnets.cpp](/C++_Practise/JuniorSheet/Magnets.cpp) | C++ | 18 | 0 | 8 | 26 |
+| [C++\_Practise/JuniorSheet/NightAtTheMuseum.cpp](/C++_Practise/JuniorSheet/NightAtTheMuseum.cpp) | C++ | 15 | 2 | 6 | 23 |
 | [C++\_Practise/JuniorSheet/PetyaAndStrings.cpp](/C++_Practise/JuniorSheet/PetyaAndStrings.cpp) | C++ | 12 | 0 | 5 | 17 |
+| [C++\_Practise/JuniorSheet/PoliceRecruits.cpp](/C++_Practise/JuniorSheet/PoliceRecruits.cpp) | C++ | 20 | 0 | 6 | 26 |
+| [C++\_Practise/JuniorSheet/SerejaAndDima.cpp](/C++_Practise/JuniorSheet/SerejaAndDima.cpp) | C++ | 41 | 0 | 16 | 57 |
+| [C++\_Practise/JuniorSheet/ShassAndOskols.cpp](/C++_Practise/JuniorSheet/ShassAndOskols.cpp) | C++ | 21 | 0 | 10 | 31 |
+| [C++\_Practise/JuniorSheet/StonesOnTable.cpp](/C++_Practise/JuniorSheet/StonesOnTable.cpp) | C++ | 13 | 0 | 8 | 21 |
+| [C++\_Practise/JuniorSheet/StringTask.cpp](/C++_Practise/JuniorSheet/StringTask.cpp) | C++ | 18 | 0 | 8 | 26 |
 | [C++\_Practise/JuniorSheet/Team.cpp](/C++_Practise/JuniorSheet/Team.cpp) | C++ | 14 | 0 | 7 | 21 |
+| [C++\_Practise/JuniorSheet/TeamOlympiad.cpp](/C++_Practise/JuniorSheet/TeamOlympiad.cpp) | C++ | 17 | 0 | 10 | 27 |
 | [C++\_Practise/JuniorSheet/VanyaAndFence.cpp](/C++_Practise/JuniorSheet/VanyaAndFence.cpp) | C++ | 15 | 0 | 5 | 20 |
+| [C++\_Practise/JuniorSheet/Word.cpp](/C++_Practise/JuniorSheet/Word.cpp) | C++ | 22 | 0 | 5 | 27 |
 | [C++\_Practise/MaxValue.cpp](/C++_Practise/MaxValue.cpp) | C++ | 18 | 2 | 6 | 26 |
 | [C++\_Practise/ProblemsPlan/BeautifulMatrix.cpp](/C++_Practise/ProblemsPlan/BeautifulMatrix.cpp) | C++ | 0 | 0 | 1 | 1 |
 | [C++\_Practise/ProblemsPlan/BeautifulYear.cpp](/C++_Practise/ProblemsPlan/BeautifulYear.cpp) | C++ | 21 | 0 | 8 | 29 |
@@ -74,6 +115,8 @@ Total : 73 files,  1243 codes, 135 comments, 508 blanks, all 1886 lines
 | [C++\_Practise/USACO/Teleportation.cpp](/C++_Practise/USACO/Teleportation.cpp) | C++ | 17 | 8 | 5 | 30 |
 | [C++\_Practise/USACO/Template.cpp](/C++_Practise/USACO/Template.cpp) | C++ | 12 | 8 | 2 | 22 |
 | [C++\_Practise/USACO/dykABC.cpp](/C++_Practise/USACO/dykABC.cpp) | C++ | 20 | 8 | 7 | 35 |
+| [C++\_Practise/USACO/gift1.cpp](/C++_Practise/USACO/gift1.cpp) | C++ | 28 | 11 | 8 | 47 |
+| [C++\_Practise/USACO/ride.cpp](/C++_Practise/USACO/ride.cpp) | C++ | 23 | 9 | 5 | 37 |
 | [C++\_Practise/Vplanet/BarkToUnlock.cpp](/C++_Practise/Vplanet/BarkToUnlock.cpp) | C++ | 29 | 0 | 13 | 42 |
 | [C++\_Practise/Vplanet/FafaAndGates.cpp](/C++_Practise/Vplanet/FafaAndGates.cpp) | C++ | 33 | 8 | 15 | 56 |
 | [C++\_Practise/Vplanet/KeyRaces.cpp](/C++_Practise/Vplanet/KeyRaces.cpp) | C++ | 23 | 0 | 11 | 34 |
@@ -84,5 +127,6 @@ Total : 73 files,  1243 codes, 135 comments, 508 blanks, all 1886 lines
 | [C++\_Practise/uniquecounter.cpp](/C++_Practise/uniquecounter.cpp) | C++ | 16 | 6 | 6 | 28 |
 | [LeetcodeCourse/contains-duplicate.py](/LeetcodeCourse/contains-duplicate.py) | Python | 7 | 4 | 6 | 17 |
 | [README.md](/README.md) | Markdown | 3 | 0 | 1 | 4 |
+| [tes.cpp](/tes.cpp) | C++ | 7 | 0 | 5 | 12 |
 
 [Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
