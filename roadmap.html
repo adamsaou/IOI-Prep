@@ -1,0 +1,631 @@
+<title>Adam's CP Fundamentals Roadmap</title>
+<style>
+  :root{
+    --bg:#eef0f5; --panel:#ffffff; --panel-2:#f4f5f9; --panel-3:#eaecf3;
+    --ink:#191c28; --ink-2:#3c4157; --muted:#6a7089;
+    --line:#e0e2ec; --line-2:#d3d6e2;
+    --accent:#4a58e8; --accent-2:#3a47d6; --accent-soft:rgba(74,88,232,.10);
+    --done:#1f9d55; --done-soft:rgba(31,157,85,.12); --done-line:rgba(31,157,85,.35);
+    --gate:#b9741a; --gate-soft:rgba(185,116,26,.12); --gate-line:rgba(185,116,26,.45);
+    --star:#8a6d1f;
+    --shadow:0 1px 2px rgba(20,24,45,.06),0 4px 16px rgba(20,24,45,.05);
+    --mono:ui-monospace,"Cascadia Code","JetBrains Mono","SF Mono",Consolas,"Liberation Mono",monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0d0e15; --panel:#161824; --panel-2:#1c1f2e; --panel-3:#232637;
+      --ink:#e7e9f2; --ink-2:#c2c6d8; --muted:#8b91a8;
+      --line:#262a3c; --line-2:#323752;
+      --accent:#7d8aff; --accent-2:#8f9bff; --accent-soft:rgba(125,138,255,.14);
+      --done:#41c463; --done-soft:rgba(65,196,99,.15); --done-line:rgba(65,196,99,.4);
+      --gate:#e5a338; --gate-soft:rgba(229,163,56,.14); --gate-line:rgba(229,163,56,.5);
+      --star:#e8c15c;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.28);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#eef0f5; --panel:#ffffff; --panel-2:#f4f5f9; --panel-3:#eaecf3;
+    --ink:#191c28; --ink-2:#3c4157; --muted:#6a7089; --line:#e0e2ec; --line-2:#d3d6e2;
+    --accent:#4a58e8; --accent-2:#3a47d6; --accent-soft:rgba(74,88,232,.10);
+    --done:#1f9d55; --done-soft:rgba(31,157,85,.12); --done-line:rgba(31,157,85,.35);
+    --gate:#b9741a; --gate-soft:rgba(185,116,26,.12); --gate-line:rgba(185,116,26,.45);
+    --star:#8a6d1f; --shadow:0 1px 2px rgba(20,24,45,.06),0 4px 16px rgba(20,24,45,.05);
+  }
+  :root[data-theme="dark"]{
+    --bg:#0d0e15; --panel:#161824; --panel-2:#1c1f2e; --panel-3:#232637;
+    --ink:#e7e9f2; --ink-2:#c2c6d8; --muted:#8b91a8; --line:#262a3c; --line-2:#323752;
+    --accent:#7d8aff; --accent-2:#8f9bff; --accent-soft:rgba(125,138,255,.14);
+    --done:#41c463; --done-soft:rgba(65,196,99,.15); --done-line:rgba(65,196,99,.4);
+    --gate:#e5a338; --gate-soft:rgba(229,163,56,.14); --gate-line:rgba(229,163,56,.5);
+    --star:#e8c15c; --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.28);
+  }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.5;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 18px 80px;}
+
+  /* header */
+  header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .top-inner{max-width:920px;margin:0 auto;padding:14px 18px 12px;}
+  .brandrow{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  h1{font-family:var(--mono);font-size:19px;font-weight:650;margin:0;letter-spacing:-.3px;text-wrap:balance;}
+  h1 .who{color:var(--accent);}
+  .sub{font-size:12.5px;color:var(--muted);margin:2px 0 0;}
+  .pct{font-family:var(--mono);font-size:22px;font-weight:650;font-variant-numeric:tabular-nums;
+    color:var(--ink);white-space:nowrap;}
+  .pct small{font-size:12px;color:var(--muted);font-weight:500;}
+  .bar{height:8px;border-radius:99px;background:var(--panel-3);overflow:hidden;margin-top:11px;
+    border:1px solid var(--line);}
+  .bar > i{display:block;height:100%;width:0;border-radius:99px;
+    background:linear-gradient(90deg,var(--accent),var(--done));transition:width .5s cubic-bezier(.2,.7,.2,1);}
+  .controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px;}
+  .seg{display:inline-flex;background:var(--panel-2);border:1px solid var(--line);border-radius:9px;padding:2px;gap:2px;}
+  .seg button{font-family:var(--mono);font-size:12px;border:0;background:transparent;color:var(--muted);
+    padding:5px 11px;border-radius:7px;cursor:pointer;font-weight:550;}
+  .seg button[aria-pressed="true"]{background:var(--panel);color:var(--ink);box-shadow:var(--shadow);}
+  .ghost{font-family:var(--mono);font-size:12px;color:var(--muted);background:transparent;
+    border:1px solid var(--line);border-radius:8px;padding:6px 11px;cursor:pointer;font-weight:550;}
+  .ghost:hover{color:var(--ink);border-color:var(--line-2);}
+  .spacer{flex:1 1 auto;}
+
+  /* intro note */
+  .note{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;
+    margin:20px 0;box-shadow:var(--shadow);font-size:13.5px;color:var(--ink-2);}
+  .note b{color:var(--ink);}
+  .note .k{font-family:var(--mono);color:var(--accent);font-size:12.5px;}
+  .legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+  .legend .pill{cursor:default;}
+
+  /* pills */
+  .pill{font-family:var(--mono);font-size:10.5px;font-weight:650;letter-spacing:.4px;text-transform:uppercase;
+    padding:3px 8px;border-radius:99px;white-space:nowrap;border:1px solid transparent;}
+  .pill.todo{background:var(--panel-3);color:var(--muted);border-color:var(--line);}
+  .pill.prog{background:var(--accent-soft);color:var(--accent);border-color:color-mix(in srgb,var(--accent) 30%,transparent);}
+  .pill.done{background:var(--done-soft);color:var(--done);border-color:var(--done-line);}
+  .pill.gate{background:var(--gate-soft);color:var(--gate);border-color:var(--gate-line);}
+  .pill.mile{background:color-mix(in srgb,var(--star) 15%,transparent);color:var(--star);
+    border-color:color-mix(in srgb,var(--star) 40%,transparent);}
+
+  /* stage cards */
+  details.stage{background:var(--panel);border:1px solid var(--line);border-radius:13px;margin:11px 0;
+    box-shadow:var(--shadow);overflow:hidden;}
+  details.stage[data-gate]{border-color:var(--gate-line);}
+  details.stage[data-gate]{background:
+    linear-gradient(var(--panel),var(--panel)) padding-box,var(--panel);}
+  details.stage[data-gate] > summary{border-left:3px solid var(--gate);}
+  summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:13px;
+    outline:none;}
+  summary::-webkit-details-marker{display:none;}
+  summary:focus-visible{box-shadow:inset 0 0 0 2px var(--accent);border-radius:12px;}
+  .num{font-family:var(--mono);font-size:13px;font-weight:650;font-variant-numeric:tabular-nums;
+    color:var(--muted);background:var(--panel-2);border:1px solid var(--line);border-radius:8px;
+    min-width:34px;height:34px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+  details.stage.allc .num{background:var(--done-soft);color:var(--done);border-color:var(--done-line);}
+  details.stage[data-gate] .num{background:var(--gate-soft);color:var(--gate);border-color:var(--gate-line);}
+  .st-main{flex:1 1 auto;min-width:0;}
+  .st-title{font-family:var(--mono);font-weight:600;font-size:14.5px;letter-spacing:-.2px;
+    display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .st-goal{font-size:12.5px;color:var(--muted);margin-top:2px;}
+  .st-right{display:flex;align-items:center;gap:10px;flex:0 0 auto;}
+  .count{font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;
+    white-space:nowrap;}
+  .count b{color:var(--ink);}
+  .chev{color:var(--muted);transition:transform .25s;flex:0 0 auto;font-size:14px;line-height:1;}
+  details.stage[open] .chev{transform:rotate(90deg);}
+  .st-bar{height:4px;background:var(--panel-3);}
+  .st-bar > i{display:block;height:100%;width:0;background:var(--accent);transition:width .4s;}
+  details.stage.allc .st-bar > i{background:var(--done);}
+
+  .body{padding:4px 16px 16px;border-top:1px solid var(--line);}
+  .items{display:flex;flex-direction:column;gap:1px;margin:8px 0 4px;}
+  label.item{display:flex;gap:11px;align-items:flex-start;padding:9px 8px;border-radius:9px;cursor:pointer;}
+  label.item:hover{background:var(--panel-2);}
+  label.item input{position:absolute;opacity:0;width:0;height:0;}
+  .box{flex:0 0 auto;width:19px;height:19px;margin-top:1px;border-radius:6px;border:1.7px solid var(--line-2);
+    background:var(--panel);display:flex;align-items:center;justify-content:center;transition:.15s;}
+  .box::after{content:"\2713";color:#fff;font-size:12px;font-weight:800;line-height:1;opacity:0;transform:scale(.5);transition:.15s;}
+  label.item input:checked + .box{background:var(--done);border-color:var(--done);}
+  label.item input:checked + .box::after{opacity:1;transform:scale(1);}
+  label.item input:focus-visible + .box{box-shadow:0 0 0 3px var(--accent-soft);border-color:var(--accent);}
+  .it-txt{min-width:0;}
+  .it-t{font-family:var(--mono);font-size:13px;font-weight:550;color:var(--ink-2);letter-spacing:-.1px;}
+  label.item input:checked ~ .it-txt .it-t{color:var(--muted);text-decoration:line-through;
+    text-decoration-color:var(--done-line);}
+  .it-n{font-size:12px;color:var(--muted);margin-top:1px;line-height:1.4;}
+  .it-n::before{content:"⚠ ";color:var(--gate);font-size:11px;}
+  .it-n.plain::before{content:"";}
+  .exit{margin-top:12px;font-size:12.5px;background:var(--panel-2);border:1px dashed var(--line-2);
+    border-radius:10px;padding:10px 13px;color:var(--ink-2);}
+  .exit b{font-family:var(--mono);color:var(--accent);font-size:11px;text-transform:uppercase;letter-spacing:.5px;}
+  details.stage[data-gate] .exit b{color:var(--gate);}
+  .prac{margin-top:10px;font-size:12.5px;color:var(--muted);}
+  .prac b{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--ink-2);}
+  .prac .p{display:inline-block;font-family:var(--mono);font-size:11.5px;background:var(--accent-soft);
+    color:var(--accent);border-radius:6px;padding:1px 7px;margin:2px 4px 0 0;}
+
+  /* filtered states */
+  body.f-todo label.item.done-i,body.f-done label.item.todo-i{display:none;}
+  body.f-todo details.stage.allc,body.f-done details.stage.nonec{display:none;}
+
+  /* trigger table */
+  .section-h{font-family:var(--mono);font-size:15px;font-weight:650;margin:34px 0 4px;letter-spacing:-.3px;
+    display:flex;align-items:center;gap:9px;}
+  .section-h .dot{width:8px;height:8px;border-radius:99px;background:var(--accent);}
+  .section-sub{font-size:12.5px;color:var(--muted);margin:0 0 14px;}
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);}
+  table{border-collapse:collapse;width:100%;font-size:12.5px;min-width:420px;}
+  th,td{text-align:left;padding:9px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+  thead th{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;
+    color:var(--muted);background:var(--panel-2);position:sticky;top:0;}
+  tbody tr:last-child td{border-bottom:0;}
+  tbody tr:hover td{background:var(--panel-2);}
+  td.sig{font-family:var(--mono);color:var(--ink-2);white-space:nowrap;}
+  td.tool{color:var(--ink);}
+  td.tool b{color:var(--accent);font-weight:600;}
+
+  footer{margin-top:40px;text-align:center;padding:26px;background:var(--panel);border:1px solid var(--line);
+    border-radius:14px;box-shadow:var(--shadow);}
+  footer .flag{font-size:26px;}
+  footer .goal{font-family:var(--mono);font-size:15px;font-weight:650;margin-top:6px;}
+  footer .goal .hi{color:var(--accent);}
+  footer .fine{font-size:12px;color:var(--muted);margin-top:6px;}
+
+  @media (max-width:560px){
+    .st-goal{display:none;}
+    h1{font-size:16px;}
+    summary{padding:12px 13px;gap:10px;}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+</style>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brandrow">
+      <div>
+        <h1>🧭 <span class="who">Adam's</span> 0→1 CP Fundamentals</h1>
+        <p class="sub">Every fundamental, dependency-ordered — from "compile a program" to a USACO Silver / CF 1200+ base.</p>
+      </div>
+      <div class="pct"><span id="pctNum">0</span>%<br><small><span id="doneNum">0</span> / <span id="totNum">0</span> done</small></div>
+    </div>
+    <div class="bar"><i id="barFill"></i></div>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Filter items">
+        <button data-filter="all" aria-pressed="true">All</button>
+        <button data-filter="todo" aria-pressed="false">To-do</button>
+        <button data-filter="done" aria-pressed="false">Done</button>
+      </div>
+      <span class="spacer"></span>
+      <button class="ghost" id="expandAll">Expand all</button>
+      <button class="ghost" id="collapseAll">Collapse all</button>
+      <button class="ghost" id="resetBtn">Reset</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="note">
+    <b>How to use it.</b> Tick items as you truly own them (they save in this browser). Don't re-grind what's already
+    <span style="color:var(--done)">green</span> — use it as a <b>gap audit</b>: skim, and stop at the first shaky item.
+    Two stages are <span style="color:var(--gate)">gates</span> — <span class="k">complexity</span> and <span class="k">correctness</span> —
+    and no technique stage counts until those reflexes are automatic. The ⚠ line under each item is the exact mistake that causes a Wrong Answer.
+    <div class="legend">
+      <span class="pill done">✓ done</span>
+      <span class="pill prog">in progress</span>
+      <span class="pill todo">to do</span>
+      <span class="pill gate">⛔ gate</span>
+      <span class="pill mile">★ milestone</span>
+    </div>
+  </div>
+
+  <main id="stages"></main>
+
+  <h2 class="section-h"><span class="dot"></span>Appendix A — Trigger table</h2>
+  <p class="section-sub">The direct cure for "knows the name, misses the trigger." Read the <b>signal</b> in the statement → fire the <b>tool</b>. Add a row to your <span style="font-family:var(--mono)">CHEATSHEET.md</span> after every solved problem.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Signal in the statement / constraints</th><th>Fire this tool</th></tr></thead>
+      <tbody id="trigBody"></tbody>
+    </table>
+  </div>
+
+  <footer>
+    <div class="flag">🏔️</div>
+    <div class="goal">Summit: <span class="hi">USACO Silver</span> · <span class="hi">Codeforces 1200+</span></div>
+    <div class="fine">Everything above is the load-bearing slab under DP &amp; weighted graphs. When Stage 15 is automatic, the climb to Gold begins.</div>
+  </footer>
+</div>
+
+<script>
+const D=1; // done flag shorthand
+// stages: [num, title, goal, gate(null|"A"|"B"), badge(null|"milestone"), items[[title,note,done?,plainNote?]], practice[], exit]
+const STAGES=[
+ [0,"The compile-run loop","Turn text into a running, debuggable program — never be blocked by the toolchain.",null,null,[
+   ["Program skeleton, compile & run","Editing f.cpp but re-running an old f.exe — 'my change did nothing'."],
+   ["Preprocessor & namespace basics","Naming a variable count, next, or y1 — clashes with library names."],
+   ["Read a compiler error","Panicking at the red instead of reading the file:line it points to."],
+   ["Warnings as a debugging tool","Ignoring 'may be used uninitialized' — it points straight at your WAs."],
+   ["Sanitizers early (-fsanitize=address,undefined)","Staring at code for an hour instead of letting the sanitizer name the line."],
+   ["MSYS2 specifics: raise stack, freopen","An unexplained crash that's really a stack overflow on a big recursion."]],
+   ["CSES: verify your setup"],
+   "You can create, compile (warnings on), run, break-then-read-the-error, and feed a file as input."],
+ [1,"First AC: values in, answer out","Get a real judge to say Accepted — where most of your WAs are born.",null,null,[
+   ["Statement → I/O contract","Coding from a vague memory and solving the wrong problem."],
+   ["Variables & declaration","int sum; then using it — reads garbage (your init-to-0 weakness)."],
+   ["cin / cout basics","A trailing space, missing newline, or leftover debug line = WA."],
+   ["Arithmetic operators & precedence","Expecting 1/2 to be 0.5."],
+   ["Integer division truncates","(a+b)/2 'average' that silently floors."],
+   ["Modulo, incl. negatives","-7 % 5 == -2, not 3. True mod: ((a%b)+b)%b."],
+   ["int and its ~2.1·10⁹ range","Treating int as 'big enough for anything'."],
+   ["long long & overflow reasoning","long long x = a*b with int a,b — overflows in int BEFORE the store."],
+   ["Type conversion & casting","Casting the RESULT (long long)(a*b) instead of an OPERAND (long long)a*b."],
+   ["Type aliases & CP macros (read them)","Can't read editorials because ll / pb / all(v) are opaque."],
+   ["Pre-submit checklist",null,D]],
+   ["CSES: Weird Algorithm","CSES: Missing Number","CF Div2 A"],
+   "First Accepted; overflow and output format handled."],
+ [2,"Decisions, loops & the speed reflex","Branch and repeat — and never write code before checking N.",null,null,[
+   ["if / else & boolean logic","Using = (assign) where you meant == (compare)."],
+   ["Comparison & logical operators (&&, ||, !)","Forgetting short-circuit order / De Morgan when negating."],
+   ["Ternary ?: operator","Nesting three deep until it's unreadable — use if/else."],
+   ["for / while / do-while","Off-by-one in the loop bound (< vs <=)."],
+   ["break / continue","continue skips the increment step in a while loop → infinite loop."],
+   ["Nested loops → count the ops","Assuming a nested loop is affordable without multiplying the bounds."],
+   ["⏱️ SPEED REFLEX: read N → say O(?) fits","Reaching brute force and never asking 'is it fast enough?'."],
+   ["Simulation","Do EXACTLY what the statement says — a dropped rule is a WA."],
+   ["Casework","Enumerate every case; the one you skip is the hidden test."]],
+   ["USACO Bronze: Simulation","CF Div2 A/B"],
+   "You translate logic into control flow, and the N→complexity line is becoming automatic."],
+ [3,"Storing many things: arrays, vectors, strings","Read N items and process a whole collection.",null,null,[
+   ["Fixed-size arrays (1D)","Indexing a[n]; sizing a[n] with a runtime n."],
+   ["Big arrays must be global/static","int a[10000000] inside main → stack-overflow crash."],
+   ["Global vs local & init-to-zero","Assuming a local int cnt[100] starts at 0 (it's garbage)."],
+   ["Uninitialized-variable UB","int sum; then accumulate — permanently on your checklist."],
+   ["std::vector basics","v[i] before it's that big; v[0]=5 on an empty vector."],
+   ["vector sizing & mutators","Forgetting to reset between test cases; reserve ≠ resize."],
+   ["size() is unsigned — the size_t trap","v.size()-1 on empty vector wraps to ~1.8·10¹⁹ → 4-billion loop."],
+   ["vector<bool> is a bit-packed proxy","for(auto& b : vis) on a vector<bool>; use vector<char> for visited."],
+   ["Out-of-bounds = UB","Off-by-one at the last index — a top 'passes sample, RE on judge'."],
+   ["char & ASCII arithmetic","Using char '7' (value 55) as the number 7; use c-'0'."],
+   ["string basics","cin>>s reads ONE word (stops at space), not a whole line."],
+   ["double/float & precision","== on doubles; use abs(a-b) < 1e-9. Prefer integers."]],
+   ["CSES: Distinct Numbers","CSES: Repetitions"],
+   "You read n then n values, transform, print clean output, and know which arrays auto-zero."],
+ [4,"Input/output mastery","Parse any input shape; a misparse = you solved the wrong problem.",null,null,[
+   ["Reading N items in a loop","Looping to <= n, or reading n itself as a value."],
+   ["Mixed types & multiple values per line","Reading in the wrong declared order."],
+   ["Reading until EOF: while(cin>>x)","while(!cin.eof()) processes the last value twice."],
+   ["getline & the >>-then-getline trap","First getline returns empty — clear the leftover \\n with cin.ignore()."],
+   ["stringstream / istringstream","Splitting a line into an unknown number of tokens."],
+   ["String↔number: stoi/stoll/to_string","stoi on a value beyond int range — needs stoll."],
+   ["Character classification (<cctype>)","toupper RETURNS the new char (doesn't modify in place)."],
+   ["Output: '\\n' vs endl, setprecision","endl in a tight loop flushes → TLE; a double without fixed prints 1e+09."],
+   ["Fast I/O setup","Mixing scanf/printf with cin/cout after disabling sync."],
+   ["Exact output formatting","YES vs Yes, trailing space, missing final newline → WA/PE."],
+   ["USACO file I/O convention","Old (pre-Dec-2020) problems use fin/fout — using cin/cout scores 0."]],
+   ["USACO Bronze: Word Processor","CSES: Introductory set"],
+   "You parse any shape (counted, EOF, mixed, whole-line, variable-token) and print byte-exact output."],
+ [5,"Functions, references, scope, lambdas","Package logic, pass big data cheaply, write a comparator.",null,null,[
+   ["Functions & return values","A non-void function with a path that returns nothing (UB)."],
+   ["void functions & side effects","Trying to use a nonexistent return value."],
+   ["Pass by value vs reference (&)","swap by value doesn't swap; big vectors by value in a loop → TLE."],
+   ["const reference","Copying large inputs by leaving off const&."],
+   ["Lambda expressions","Capturing [=] when you needed the live value → uses a stale copy."],
+   ["Scope & lifetime","Shadowing — re-declaring in an inner block so the outer never updates."],
+   ["Recursion basics","Missing/wrong base case → infinite recursion / stack overflow."],
+   ["Deep-recursion / stack depth","A DFS on a 10⁵-long chain blows the stack — use BFS or raise it."]],
+   ["Drill: write gcd() + a solve() called in a t-loop"],
+   "You pick value/reference/const-ref per parameter, write a lambda comparator from memory, trace a small recursion."],
+ [6,"Iterators, sorting & comparators","Order data by any rule.",null,null,[
+   ["Iterators & the begin/end idiom","Dereferencing end(); comparing iterators with < instead of !=."],
+   ["Iterator / reference invalidation","Holding auto& x = v[0] across a push_back (realloc) — UB."],
+   ["pair","Putting the wrong field first when the sort key must be .first."],
+   ["tuple","Reaching for tuple when a named struct is clearer."],
+   ["structs","Leaving members uninitialized; forgetting the ; after }.",D],
+   ["sort() + complexity awareness","Sorting inside a loop → O(n² log n); losing original indices."],
+   ["Sort stability & stable_sort","Assuming sort preserves the order of equal elements (it doesn't)."],
+   ["Custom comparators (multi-key tie-breaks)","Using <= → violates strict-weak-ordering → crash on big tied inputs.",D],
+   ["Comparator correctness (strict weak ordering)","return a.x <= b.x — occasional crash on large tied inputs only."],
+   ["min/max/swap/abs/__gcd + min({a,b,c})","Init a running max to 0 when values can be negative.",D],
+   ["O(n) linear scan (max/min/running best)","Init max to 0 on all-negative input; an overflowing int sum.",D]],
+   ["CSES: Ferris Wheel","USACO Bronze: Intro to Sorting"],
+   "You sort a vector of structs by any multi-key rule with a strict lambda, and never invalidate an iterator mid-loop."],
+ [7,"Elementary math foundations","Integer-first thinking as a correctness habit.",null,null,[
+   ["Fixed-width ranges recap","Not knowing the 2.1·10⁹ line."],
+   ["Detecting & preventing overflow","Widening AFTER the multiply already overflowed."],
+   ["Big constants as double literals","Assuming 1e9 / 4e18 is an exact integer everywhere."],
+   ["pow()/sqrt() are floating-point","Using them for exact integer math — pow(10,9) can be 999999999.999…"],
+   ["Integer vs floating (stay in integers)","Compare a*d vs b*c instead of a/b vs c/d."],
+   ["Negative floor/ceil division","C++ truncates toward zero — the positive-only ceil breaks on negatives."],
+   ["Parity & divisibility","x%2==1 for 'odd' on a possibly-negative x (can be -1)."],
+   ["Elementary counting & combinatorics","n(n-1)/2 in int for n=10⁵ overflows; looping O(n²) for an O(1) formula."],
+   ["Manhattan & Euclidean distance","Taking sqrt and comparing doubles when squared-integer is exact."],
+   ["GCD via Euclid (__gcd)","A slow subtraction-based gcd; forgetting gcd(0,x)=x."],
+   ["LCM & its overflow trap","a*b/gcd overflows — do a/__gcd(a,b)*b, divide first."],
+   ["Primality by trial division to √n","Looping to n (slow); mishandling n<2."],
+   ["Pigeonhole / parity / invariant reasoning","Brute-forcing a 'possible?' problem instead of finding the invariant."]],
+   ["CSES: Sum of Two Values","CSES: Counting Divisors"],
+   "You default to integer math, never use pow/sqrt for exact answers, and compute gcd/lcm/pairs without overflow."],
+ [8,"Complexity reading","Turn any Big-O into a yes/no verdict against the limit. Paper drills, no coding.","A",null,[
+   ["Big-O growth-rate intuition","Writing O(2n+5) or O(n²+n) — drop constants and lower terms."],
+   ["The complexity ladder + code shapes","Believing every nested loop is O(n²) when the inner loop is fixed."],
+   ["The ~10⁸ ops/sec budget","'2 seconds is a lot' without multiplying the loops out."],
+   ["Constraint→complexity table","Designing O(n²) for N=10⁵; over-engineering when N=1000."],
+   ["CF 'sum of N over all test cases ≤ X'","Multiplying max-n by max-T and wrongly concluding TLE."],
+   ["Estimating op-count from nested loops","Treating a triangular j>i loop as full n² (it's n(n-1)/2)."],
+   ["Worst vs best vs average case","Trusting 'it usually returns early'."],
+   ["Why log growth is nearly free","Treating a set/map op as O(1) — it's O(log n)."],
+   ["Space complexity & the 256 MB budget","Declaring an N×N array for N=10⁵ without checking bytes."],
+   ["Amortized cost (push_back is O(1))","Counting one realloc as if it happened every iteration."],
+   ["Constant factors (same-O, different time)","Assuming correct Big-O guarantees AC near the limit."],
+   ["Measure before you trust","Guessing 'probably fast enough' on a tight solution — time it locally."]],
+   ["USACO Bronze: Time Complexity module"],
+   "GATE A: you never code before saying 'N ≤ __, so O(__) ≈ __ ops, fits in __s'. This sentence is automatic."],
+ [9,"Correctness, debugging & testing","Convert your high WA rate into a ritual that catches bugs before the judge.","B",null,[
+   ["Intermediate-product overflow","(long long)a*b, not long long x = a*b."],
+   ["Initialize every variable","int mx; ... mx=max(mx,a[i]) — garbage start. Use a[0]."],
+   ["Safe 'infinity' constant","INF=INT_MAX then dist+w overflows negative. Use a padded 1e9 / 4e18."],
+   ["Off-by-one / loop-boundary discipline","for(i=0;i<=n;i++) reads a[n]."],
+   ["Systematic edge-case menu","Testing only the (deliberately gentle) provided sample."],
+   ["The n=1 / single-element / empty case","Accessing a[i-1] when i can be 0 — the most common hidden killer."],
+   ["'Passes sample but wrong' skepticism","Submitting the instant the sample matches. YOUR named failure mode."],
+   ["Multiple test cases: T-loop + clear state","Stale global visited/count poisoning later cases."],
+   ["Reading tricky input formats","Reading M before N when input gives N then M."],
+   ["Floating-point output & comparison","== on doubles; scientific notation from a missing fixed."],
+   ["Understanding judge verdicts","Treating TLE as a logic bug, or RE as a math bug."],
+   ["Diagnosing runtime errors (RE)","An off-by-one access that only crashes on some inputs."],
+   ["Memory-limit awareness (MLE)","An N×N int array for N=10⁵."],
+   ["Reproduce first","Editing random lines before ever reproducing the failure."],
+   ["Print-debug to stderr; assert; NDEBUG","Debugging to cout (breaks output); leaving debug in → WA/PE."],
+   ["Step-debugging with gdb","Never learning it, so some crashes stay mysterious."],
+   ["Compile with warning flags","Ignoring the one warning pointing at the bug.",D],
+   ["Sanitizers for runtime UB","Staring at code instead of letting the sanitizer name the line."],
+   ["Trace-by-hand a tiny example first","Coding an approach you only 'feel' is right. (Matches how you learn.)"],
+   ["Re-read the statement for misreads","Confusing N/M, minimize vs maximize, 0- vs 1-indexed."],
+   ["Stress testing against a brute force","Generating only large inputs — bugs hide in n=1, all-equal, ties.",D],
+   ["Writing a good random generator","Only large uniform cases → the failing input never appears."],
+   ["Minimizing a failing test case","Debugging the giant original instead of shrinking first."],
+   ["Remove debug output before submit","A leftover cout<<'here' in the final submission."],
+   ["How judges hide & strengthen tests (CF)","Trusting a CF 'Accepted' pretest and getting hacked."],
+   ["Time-boxing + strategic editorials + upsolving","Grinding one problem 2h, or reading the whole solution and copying it."],
+   ["Recognizing technique TRIGGERS, not names","Knowing 'prefix sums' but not recognizing the range-sum signal. YOUR fix."]],
+   ["USACO: Debugging Checklist walkthrough on a past WA"],
+   "GATE B: checklist automatic; you enumerate edge cases, clear state, reproduce-then-fix, and your trigger table has started."],
+ [10,"The STL container toolkit","Membership, counting, dedup, ordered & priority access.",null,null,[
+   ["min_element / max_element","Printing the iterator instead of *it."],
+   ["accumulate","Seed 0 (int) when the sum exceeds 2·10⁹ — silent WA. Use 0LL."],
+   ["count / count_if","Calling count inside a loop (O(n²)) when a freq map is O(n)."],
+   ["reverse","Off-by-one on the end iterator."],
+   ["unique + erase-remove idiom","Forgetting to sort first; forgetting the erase (garbage tail)."],
+   ["fill / iota","memset(a,1,...) does NOT set ints to 1."],
+   ["stack (LIFO)","top()/pop() on empty is UB; pop() returns void — read top() first."],
+   ["queue (FIFO)","Confusing front() (read) with pop() (remove, void)."],
+   ["deque","Assuming middle insertion is O(1) — it's O(n)."],
+   ["set","Calling sort()/[] on a set; count returns only 0/1."],
+   ["map","m[k] INSERTS a default 0 just by reading it — use .count()/.find()."],
+   ["Frequency counting (freq[x]++)","A fixed array when values exceed bounds — use a map."],
+   ["set/map for dedup & membership ('seen')","An O(n) linear membership scan inside a loop (O(n²))."],
+   ["multiset","ms.erase(x) deletes ALL copies — use ms.erase(ms.find(x)) for one."],
+   ["priority_queue (heap)","Forgetting it's a MAX-heap by default; pop() doesn't return the value."],
+   ["set/map member lower_bound & neighbors","Using free std::lower_bound on a set (O(n), not O(log n))."],
+   ["unordered_map/set + the tradeoff","On Codeforces, plain unordered_map gets anti-hash-hacked → TLE. Use map when unsure."]],
+   ["USACO Bronze: Intro to Sets & Maps","CSES: Distinct Numbers"],
+   "You name the right container from the task ('distinct+sorted→set', 'count by key→map', 'k-th best→heap') and know each gotcha."],
+ [11,"Complete search: recursion, subsets, permutations","Brute-force correctly and know when N makes it legal.",null,null,[
+   ["Complete search / brute force","Not checking N against the limit first; double-counting (i,j) and (j,i)."],
+   ["Bitwise operators (& | ^ ~ << >>)","x & 1 == 0 parses as x & (1==0); 1<<31 on int is UB."],
+   ["Subsets via bitmask enumeration (2ⁿ)","1<<N with N≥31 without 1LL; wrong test — use (mask & (1<<i))."],
+   ["64-bit bit correctness","__builtin_popcount on a long long sees only the low 32 bits."],
+   ["Subsets recursively (include/exclude)","Mutating a shared vector without undoing the push."],
+   ["Permutations with next_permutation","Not sorting first (misses permutations); using it for N≥15."],
+   ["Backtracking (recurse + prune + undo)","Forgetting used[i]=false on return — state leaks."]],
+   ["USACO Bronze: Basic Complete Search","N-Queens count (N≤10)"],
+   "Before any brute force you write the N→complexity line; you enumerate subsets and permutations and always undo on backtrack."],
+ [12,"Bronze problem-solving patterns","Cover every remaining Bronze module — trigger-first.",null,"milestone",[
+   ["Grid / 2D traversal + neighbor offsets","Checking grid[nr][nc] BEFORE the bounds check; swapping row/col."],
+   ["Axis-aligned rectangle & interval geometry","Wrong overlap inequality; double-subtracting the overlap."],
+   ["Sorting-based solutions","Needing original indices but not storing them before sorting."],
+   ["Sort-then-greedy","Sorting by the wrong key and assuming optimality without proof.",D],
+   ["Ad hoc / constructive","Guessing a construction from n=2 alone; play n=1,2,3 by hand."],
+   ["Sets & maps as Bronze tools","(recall from Stage 10) membership/dedup/frequency."]],
+   ["USACO Bronze: Rectangle Geometry","USACO Bronze: Greedy / Ad Hoc"],
+   "MILESTONE: you name a Bronze problem's category from its shape, size it against the constraint, pass your checklist. Bronze solid."],
+ [13,"Greedy with proof, and the proof habit","Stop trusting greedies that only pass samples — where 'passes sample but wrong' bites hardest.",null,null,[
+   ["Greedy with an exchange-argument (or stress-test) habit","Assuming a greedy is correct because the samples pass."]],
+   ["Prove 'sort by end time' for interval scheduling; then stress-test a doubtful greedy"],
+   "For any greedy you either sketch a one-line exchange argument or stress-test it — never ship a greedy on vibes."],
+ [14,"Prefix sums & difference arrays","The first 'precompute so queries are O(1)' tools. You just started this.",null,null,[
+   ["1D prefix-sum construction","pre[] must be long long; off-by-one in size (n vs n+1).",2],
+   ["Range-sum query via prefix sums","The 0- vs 1-indexed boundary: pre[r+1]-pre[l] vs pre[r]-pre[l].",2],
+   ["Prefix generalizations (max/min, XOR)","Expecting preMax[r]-preMax[l] to give a range max — only works for sum/XOR."],
+   ["Difference array (range update, then finalize)","Forgetting the -v at r+1; interleaving updates with queries."],
+   ["2D prefix sums","Wrong +A −B −C +D signs; the +1 index offsets."]],
+   ["CSES: Static Range Sum Queries","CSES: Forest Queries (2D)"],
+   "You instantly recognize 'many static range-sum queries → prefix sums' and get the boundaries and long long right the first time."],
+ [15,"Early-Silver on-ramp","The stretch rungs that open Silver / CF 1200+. Don't front-load these.",null,null,[
+   ["lower_bound / upper_bound on a sorted vector","Calling it on an UNSORTED range; deref end() when nothing qualifies."],
+   ["binary_search","Wanting the position but it only returns a bool (use lower_bound)."],
+   ["Binary search by hand","A loop that never terminates; (lo+hi)/2 overflow."],
+   ["Binary search on the answer (BOTA)","Applying it when feasibility isn't monotone."],
+   ["Two pointers","Moving the wrong pointer / both at once; forgetting it must be sorted."],
+   ["Sliding window (fixed & variable)","Recomputing the window sum from scratch each step (back to O(n²))."],
+   ["Coordinate compression","Forgetting to sort+unique before lower_bound; using value not rank."],
+   ["Elementary bit manipulation","__builtin_popcount on a long long sees only the low 32 bits."],
+   ["String search (find/rfind/substr/npos)","Forgetting the npos sentinel; O(n²) from s = s + c in a loop."],
+   ["Adjacency list","Adding an undirected edge only ONE way; 1- vs 0-indexed labels."],
+   ["Grid as an implicit graph","Building a huge explicit adjacency list for a grid."],
+   ["Visited array / marking","The #1 traversal correctness piece — mark on first arrival."],
+   ["DFS on a grid (flood fill)","Missing the bounds/visited/wall base case; stack overflow on huge grids."],
+   ["BFS on a grid (shortest unweighted path)","Marking visited at pop-time not push-time — a cell enqueued many times."],
+   ["DFS on an adjacency list","No visited check → loops on cycles; recursion depth overflow."],
+   ["BFS on an adjacency list","Push-time vs pop-time visited bug; uninitialized dist[]."],
+   ["Counting connected components","Not sharing ONE visited array across the outer loop (overcount)."],
+   ["Disjoint Set Union (Union-Find)","Forgetting path compression / union by size; parent[i]=i init."],
+   ["Sieve of Eratosthenes","Sizing the array wrong / off-by-one at N."],
+   ["Prime factorization & divisor enumeration","Double-counting when d*d==n; forgetting the leftover prime > √n."],
+   ["Modular arithmetic + non-negative subtraction","Multiplying two ints near 1e9 before the mod; a raw negative remainder."],
+   ["Fast (binary) exponentiation — intuition","Looping n multiplications; overflowing the square without long long/mod."],
+   ["bitset (container awareness)","Size must be a compile-time constant; don't confuse with vector<bool>."]],
+   ["USACO Silver: Binary Search / Two Pointers / Flood Fill","CSES: Counting Rooms","CSES: Building Roads"],
+   "CEILING: you pick the tool from a problem's trigger, implement each cleanly (visited/INF/mod), and prove-or-stress greedies. Silver / CF 1200+ base."],
+ [16,"The bridge to Silver/Gold","Name the next boundary so the foundation points somewhere. A signpost, not a rung.",null,null,[
+   ["Dynamic Programming mindset","A DP with an ill-defined state, or recomputing overlapping subproblems.","plain"],
+   ["First DP problems when you get here","CSES: Dice Combinations, Coin Combinations I, LIS; USACO Silver: Intro to DP.","plain"]],
+   ["CSES: Dice Combinations","CSES: Longest Increasing Subsequence"],
+   "Everything in Stages 0–15 is the slab under DP and weighted graphs. When Stage 15 is automatic, start here."]
+];
+
+const TRIGGERS=[
+ ["N ≤ 10","permutations / next_permutation, O(n!)"],
+ ["N ≤ 20–24","subset bitmask, O(2ⁿ)"],
+ ["N ≤ 500","O(n³) triple loop is fine"],
+ ["N ≤ 5000","O(n²) brute force is fine"],
+ ["N ≤ 2·10⁵","need O(n log n) — sort / set / binary search"],
+ ["N ≤ 10⁷","need O(n) — single pass, fast IO"],
+ ["'sum of n over all tests ≤ X' (CF)","budget against the sum, not per-test n"],
+ ["any sum/product of big values","long long, cast an operand before *"],
+ ["many range-sum queries, static array","prefix sums"],
+ ["add X to range [l,r] many times, read at end","difference array"],
+ ["subrectangle sums on a grid","2D prefix sums"],
+ ["range XOR queries","prefix-XOR"],
+ ["sorted data + 'first ≥ x / count ≤ x'","lower_bound / upper_bound"],
+ ["'maximize the minimum / minimize the maximum'","binary search on the answer"],
+ ["'count pairs / two-sum' on sorted data","two pointers"],
+ ["'longest/shortest contiguous subarray'","sliding window"],
+ ["'distinct / seen / frequency'","set / map"],
+ ["values huge/sparse, index by them","coordinate compression"],
+ ["'how many groups / islands / regions'","flood fill + component count, or DSU"],
+ ["'fewest moves / shortest path', unweighted","BFS"],
+ ["'connected after these merges?'","DSU"],
+ ["'construct any valid X' / 'is it possible'","ad-hoc: try n=1,2,3; parity/pigeonhole invariant"],
+ ["'answer modulo 1e9+7'","modular arithmetic, reduce each step"],
+ ["two axis-aligned rectangles / intervals","overlap test + inclusion-exclusion"],
+ ["'closest points'","compare squared distances (no sqrt)"],
+ ["'count ways / min-max over overlapping choices'","dynamic programming (next stage)"]
+];
+
+const KEY="cp-roadmap-v1";
+let mem=null, storageOK=true;
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||"null");}catch(e){storageOK=false;return mem;}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){storageOK=false;mem=state;}}
+function seed(){const s={};STAGES.forEach(st=>st[5].forEach((it,i)=>{if(it[2]===D)s["s"+st[0]+"-"+i]=1;}));return s;}
+let state=load();
+if(!state){state=seed();save();}
+
+function esc(t){return (t||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!=null&&x!=="")e.textContent=x;return e;}
+function pillFor(st){const s=stageStats(st),done=s.done,tot=s.tot,all=done===tot,none=done===0,gate=st[3],badge=st[4];let c,x;if(gate){c="gate";x="⛔ Gate "+gate;}else if(badge==="milestone"&&all){c="mile";x="★ done";}else if(badge==="milestone"){c="mile";x="★ milestone";}else if(all){c="done";x="✓ done";}else if(!none){c="prog";x="in progress";}else{c="todo";x="to do";}return el("span","pill "+c,x);}
+
+function stageStats(st){let done=0;const tot=st[5].length;st[5].forEach((it,i)=>{if(state["s"+st[0]+"-"+i])done++;});return{done,tot};}
+
+function render(){
+  const host=document.getElementById("stages");host.textContent="";
+  STAGES.forEach(function(st){
+    const num=st[0],title=st[1],goal=st[2],gate=st[3],items=st[5],prac=st[6],exit=st[7];
+    const ss=stageStats(st),done=ss.done,tot=ss.tot;
+    const det=document.createElement("details");
+    det.className="stage"+(done===tot?" allc":"")+(done===0?" nonec":"");
+    if(gate)det.setAttribute("data-gate",gate);
+    det.setAttribute("data-stage",num);
+    if(num===14||gate)det.open=true;
+    const sum=document.createElement("summary");
+    sum.appendChild(el("span","num",String(num).padStart(2,"0")));
+    const main=el("span","st-main");
+    const ttl=el("span","st-title");ttl.appendChild(document.createTextNode(title+" "));ttl.appendChild(pillFor(st));
+    main.appendChild(ttl);main.appendChild(el("span","st-goal",goal));
+    sum.appendChild(main);
+    const right=el("span","st-right");
+    const cnt=el("span","count");
+    cnt.appendChild(el("b","c-done",String(done)));
+    cnt.appendChild(document.createTextNode("/"));
+    cnt.appendChild(el("span","c-tot",String(tot)));
+    right.appendChild(cnt);right.appendChild(el("span","chev","▸"));
+    sum.appendChild(right);det.appendChild(sum);
+    const bar=el("div","st-bar");const bi=document.createElement("i");
+    bi.style.width=(tot?Math.round(done/tot*100):0)+"%";bar.appendChild(bi);det.appendChild(bar);
+    const body=el("div","body");
+    const iw=el("div","items");
+    items.forEach(function(it,i){
+      const id="s"+num+"-"+i,on=!!state[id];
+      const lab=el("label","item "+(on?"done-i":"todo-i"));
+      const inp=document.createElement("input");inp.type="checkbox";inp.setAttribute("data-id",id);inp.checked=on;
+      lab.appendChild(inp);lab.appendChild(el("span","box"));
+      const tx=el("span","it-txt");tx.appendChild(el("span","it-t",it[0]));
+      if(it[1])tx.appendChild(el("span",(it[3]==="plain"?"it-n plain":"it-n"),it[1]));
+      lab.appendChild(tx);iw.appendChild(lab);
+    });
+    body.appendChild(iw);
+    if(prac&&prac.length){
+      const pr=el("div","prac");pr.appendChild(el("b",null,"Practice"));pr.appendChild(document.createTextNode(" "));
+      prac.forEach(function(p){pr.appendChild(el("span","p",p));pr.appendChild(document.createTextNode(" "));});
+      body.appendChild(pr);
+    }
+    const ex=el("div","exit");ex.appendChild(el("b",null,"Exit "+num));ex.appendChild(document.createTextNode(" "+exit));
+    body.appendChild(ex);det.appendChild(body);
+    host.appendChild(det);
+  });
+  const tb=document.getElementById("trigBody");tb.textContent="";
+  TRIGGERS.forEach(function(r){
+    const tr=document.createElement("tr");
+    tr.appendChild(el("td","sig",r[0]));tr.appendChild(el("td","tool",r[1]));
+    tb.appendChild(tr);
+  });
+  updateTotals();
+}
+
+function updateStage(det){
+  const num=+det.getAttribute("data-stage");
+  const st=STAGES.find(function(s){return s[0]===num;});
+  const ss=stageStats(st),done=ss.done,tot=ss.tot;
+  det.querySelector(".c-done").textContent=done;
+  det.querySelector(".st-bar > i").style.width=(tot?Math.round(done/tot*100):0)+"%";
+  det.classList.toggle("allc",done===tot);
+  det.classList.toggle("nonec",done===0);
+  const ttl=det.querySelector(".st-title");
+  ttl.textContent=st[1]+" ";ttl.appendChild(pillFor(st));
+}
+
+function updateTotals(){
+  let done=0,tot=0;
+  STAGES.forEach(st=>{const s=stageStats(st);done+=s.done;tot+=s.tot;});
+  const pct=tot?Math.round(done/tot*100):0;
+  document.getElementById("pctNum").textContent=pct;
+  document.getElementById("doneNum").textContent=done;
+  document.getElementById("totNum").textContent=tot;
+  document.getElementById("barFill").style.width=pct+"%";
+}
+
+document.addEventListener("change",e=>{
+  const cb=e.target.closest('input[type="checkbox"][data-id]');
+  if(!cb)return;
+  const id=cb.dataset.id;
+  if(cb.checked)state[id]=1;else delete state[id];
+  save();
+  const label=cb.closest("label.item");
+  label.classList.toggle("done-i",cb.checked);
+  label.classList.toggle("todo-i",!cb.checked);
+  updateStage(cb.closest("details.stage"));
+  updateTotals();
+});
+
+document.querySelectorAll(".seg button").forEach(b=>{
+  b.addEventListener("click",()=>{
+    document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed","false"));
+    b.setAttribute("aria-pressed","true");
+    document.body.classList.remove("f-todo","f-done");
+    if(b.dataset.filter!=="all")document.body.classList.add("f-"+b.dataset.filter);
+    if(b.dataset.filter!=="all")document.querySelectorAll("details.stage").forEach(d=>d.open=true);
+  });
+});
+document.getElementById("expandAll").addEventListener("click",()=>document.querySelectorAll("details.stage").forEach(d=>d.open=true));
+document.getElementById("collapseAll").addEventListener("click",()=>document.querySelectorAll("details.stage").forEach(d=>d.open=false));
+document.getElementById("resetBtn").addEventListener("click",()=>{
+  state=seed();save();render();
+  document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.filter==="all"?"true":"false"));
+  document.body.classList.remove("f-todo","f-done");
+});
+
+render();
+</script>

@@ -47,6 +47,11 @@ Review in this order: (1) correctness & edge cases, (2) complexity vs. constrain
 (3) cleaner STL / idioms, (4) style. Point things out and let the user apply the fixes
 unless they ask you to make them.
 
+**Always run the user's Pre-submit Checklist (top of `PROGRESS.md`) out loud** on any
+solution they submit — overflow, init, boundaries, tested — to model the reflex that fixes
+their WA problem. Adversarially probe with edge-case inputs (all-negative, max values, N=1,
+ties) rather than only checking the sample.
+
 ## STL drills
 
 On request, generate small batches (5–10) of focused micro-exercises on one STL area —
@@ -59,18 +64,26 @@ it, then check and correct. Keep them fast: reflex-building, not puzzles.
 When a concept repeatedly trips the user up, save it to memory (type `project` or
 `feedback`) so future drills and problem suggestions target it, and raise it when relevant.
 
+## Keep the cheat sheet current
+
+After each exercise or new concept, add the reusable pattern to `CHEATSHEET.md` (the user's
+personal quick-reference). Keep entries short and code-first — copyable idioms, not prose —
+and bump its "Last updated" date.
+
 ## Code conventions (match these when writing C++)
 
 - `#include <bits/stdc++.h>`, `using namespace std;`
 - Fast IO in `main`: `ios::sync_with_stdio(false); cin.tie(NULL);`
 - 4-space indentation.
-- USACO problems use file IO: `ifstream fin("problem.in"); ofstream fout("problem.out");`
+- **USACO I/O depends on the contest date.** Since the **December 2020** contest, USACO uses
+  **standard input/output** (plain `cin`/`cout`) — writing `fin`/`fout` in a modern contest scores 0.
+  Only **pre-Dec-2020 archive problems** use file IO: `ifstream fin("problem.in"); ofstream fout("problem.out");`
 - A `solve()` helper is common for multi-test-case problems.
 
 ## Build & run (Windows, g++)
 
 ```
-g++ -std=c++17 -O2 -Wall -Wextra file.cpp -o file.exe
+g++ -std=c++20 -O2 -Wall -Wextra file.cpp -o file.exe
 ./file.exe
 ```
 

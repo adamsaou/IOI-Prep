@@ -17,6 +17,7 @@ int main() {
     ofstream fout ("shell.out");
     ifstream fin ("shell.in");
     int t;
+    
     fin >> t;
     int ans = 0;
 

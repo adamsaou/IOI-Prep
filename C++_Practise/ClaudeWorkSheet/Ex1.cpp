@@ -2,21 +2,30 @@
 
 using namespace std;
 
+struct Player {
+    string name;
+    int score;
+};
+
 int main(){
 
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
+    ios::sync_with_stdio(false); cin.tie(NULL);
 
-    int n; cin>>n;
-    vector<int> nums(n);
+    int n; cin >> n;
 
-    for(int i=0;i<n;i++){
-        cin>>nums[i];
+    vector <Player> p(n);
+
+    for(int i = 0;i<n;i++){
+        cin >> p[i].name>> p[i].score;
     }
 
-    int ans = accumulate(nums.begin(), nums.end(), 0);
+    sort(p.begin(), p.end(), [](const Player& a, const Player& b){
+        return a.score > b.score;
+    });
 
-    cout << ans << "\n";
+    for(int i = 0;i<n;i++){
+       cout << p[i].name<< " "<<p[i].score << "\n";
+    }
     
     return 0;
 }
