@@ -15,6 +15,11 @@ int main(){
         
     }
 
+    for (string x : v){
+        cin >> x; 
+        cnt[x]++;
+    }
+
     
 
     
