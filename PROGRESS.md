@@ -42,6 +42,11 @@ for the lesson → mark done only when owned. Prefix sums (a Silver topic) is on
 consolidation rep; resume it at the Silver on-ramp. Secondary: CF problemset, tags `implementation`/
 `greedy`/`sortings`, rating 1000–1100.
 
+**Current focus — week of 2026-08-03: OWN Sets & Maps.** Finish `most_frequent` (map frequency),
+work the USACO Guide *Intro to Sets & Maps* problem list top-down (~3), + CSES *Sum of Two Values*,
++ one set/map STL drill. Checklist + Claude-tested on every rep. Green the module only when he can
+write a frequency `map` and a "seen" `set` cold. Next gap after: Complete Search with Recursion.
+
 ## Concept checklist
 Legend: ✅ solid · 🟡 shaky / needs reps · ⬜ not started
 
