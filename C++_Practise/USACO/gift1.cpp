@@ -12,36 +12,23 @@ PROG: gift1
 #include <fstream>
 #include <string>
 
+#define pb push_back
+
+
 using namespace std;
 
+struct People {
+    string name;
+    int money = 0;
+};
 
-#define pb push_back
 int main() {
 
     //.at()
     ofstream fout ("gift1.out");
     ifstream fin ("gift1.in");
-    int  np = 0; fin >> np;
-    vector<pair<string, int>> ppl(np);
-    //{"dave", 0},{"laura", 0},etc
 
-    for(int i = 0;i<np;i++){
-        string s; fin>>s;
-        ppl.pb({s, 0});
-    }
-
-    for(int i = 0;i<np;i++){
-        string s; fin>>s; //person
-        int money; fin>>money;
-        int people; fin>>people;
-        int mp = money/people;
-        int rest = money % people;
-        for(int j=0;j<people;j++){
-            string person; cin >> person;
-            ppl[j] = 
-        }
-
-    }
     
+
     return 0;
 }
