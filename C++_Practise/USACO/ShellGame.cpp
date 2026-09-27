@@ -21,8 +21,10 @@ int main() {
     fin >> t;
     int ans = 0;
 
-    vector <int> shells(2);
+    vector <int> shells(3);
+    for(int i = 0; i<3; i++){ shells[i] = i; }
 
+    vector <int> counter(3);
     for(int i = 0; i<t; i++){
         int a, b, g; 
         fin >> a >> b >> g;
@@ -30,9 +32,16 @@ int main() {
         //     ans++;
         // }
         //first thing i "saw"
+        swap(shells[a], shells[b]);
+        //this lwk tuff function, saved me hours of idk how much jiberrish ill do 
+        counter[shells[g]]++;
+
     
     }
+
+    ans = max({counter[0], counter[1], counter[2]});
 
     fout << ans << "\n";
     return 0;
 }
+
