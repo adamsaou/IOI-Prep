@@ -2,7 +2,7 @@
    identification information */
 /*
 ID: your_id_here
-TASK: ride
+TASK: gift1
 LANG: C++       
 PROG: gift1          
 */
@@ -28,7 +28,13 @@ int main() {
     ofstream fout ("gift1.out");
     ifstream fin ("gift1.in");
 
-    
+    int t; fin >> t;
+    int times = 7;
+    while(times--){
+
+        
+
+    }
 
     return 0;
 }
